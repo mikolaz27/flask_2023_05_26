@@ -1,23 +1,45 @@
 from flask import Flask
-import datetime
 
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/ad min")
 def hello_world():
-    return "<p>Hello, World!</p>"
+    return ['1','2','3','4 ']
+
+# /admin
+# /admin
+
+# ?#&~/:@%+
+
+# https://flask.palletsprojects.com:443
+# https | http
+# flask.palletsprojects.com - Domain
+# facebook
+# 157.240.224.20:8000/
+# 157.240.224.20:
+
+# https://flask.palletsprojects.com/admin/
 
 
-@app.route("/hello")
-def hello_mykhailo():
-    # view
-    return "<p>Hello, Mykhailo!</p>"
+# def generate_password():
+#     """
+#     from 10 to 20 chars
+#     upper and lower case
+#     """
+#     # string
+#     # ascii_lowercase
+#     # ascii_uppercase
+#     # int
+#     # special symbols
+#     # return password
+#     pass
 
-
-@app.route("/now")
-def get_datetime():
-    return f"current time: {datetime.datetime.now()}"
-
-
-app.run(port=5001, debug=True)
+# def calculate_average():
+#     """
+#     csv file with students
+#     1.calculate average high
+#     2.calculate average weight
+#     csv - use lib
+#     *pandas - use pandas for calculating
+#     """
