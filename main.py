@@ -27,9 +27,9 @@ def hello_world():
 #     from 10 to 20 chars
 #     upper and lower case
 #     """
-#     # string
-#     # ascii_lowercase
-#     # ascii_uppercase
+#     # st  ring
+#     # asci i_lowercase
+#     # asci i_uppercase
 #     # int
 #     # special symbols
 #     # return password
@@ -37,8 +37,8 @@ def hello_world():
 
 # def calculate_average():
 #     """
-#     csv file with students
-#     1.calculate average high
+#     c  sv file with students
+#     1. calculate average high
 #     2.calculate average weight
 #     csv - use lib
 #     *pandas - use pandas for calculating
