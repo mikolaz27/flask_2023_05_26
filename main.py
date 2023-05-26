@@ -27,9 +27,9 @@ def hello_world():
 #     from 10 to 20 chars
 #     upper and lower case
 #     """
-#     # string
-#     # ascii_lowercase
-#     # ascii_uppercase
+#     # st  ring
+#     # asci i_lowercase
+#     # asci i_uppercase
 #     # int
 #     # special symbols
 #     # return password
