@@ -37,8 +37,8 @@ def hello_world():
 
 # def calculate_average():
 #     """
-#     csv file with students
-#     1.calculate average high
+#     c  sv file with students
+#     1. calculate average high
 #     2.calculate average weight
 #     csv - use lib
 #     *pandas - use pandas for calculating
