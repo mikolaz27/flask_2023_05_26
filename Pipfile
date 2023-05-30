@@ -5,6 +5,9 @@ name = "pypi"
 
 [packages]
 flask = "==2.3.2"
+faker = "*"
+webargs = "*"
+requests = "*"
 
 [dev-packages]
 faker = "*"
