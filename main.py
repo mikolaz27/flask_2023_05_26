@@ -10,6 +10,8 @@ from flask import Flask, request, Response
 from webargs import fields, validate
 from webargs.flaskparser import use_kwargs
 
+from database_handler import execute_query
+from utils import format_records
 
 app = Flask(__name__)
 
@@ -22,7 +24,7 @@ def hello_world(counter):
 @app.route("/")
 def hello_world_with_args():
     my_args = request.args.get('a')
-    return my_args
+    return 'my_args'
 
 
 # MyFirstName - camel
@@ -69,6 +71,13 @@ def get_astronauts():
         statistics[entry["craft"]] = statistics.get(entry["craft"], 0) + 1
 
     return statistics
+
+
+@app.route("/get-customers")
+def get_all_customers():
+    query = "SELECT * FROM customers LIMIT 10"
+    records = execute_query(query=query)
+    return format_records(records)
 
 
 if __name__ == "__main__":
