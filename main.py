@@ -10,10 +10,13 @@ from flask import Flask, request, Response
 from webargs import fields, validate
 from webargs.flaskparser import use_kwargs
 
-from database_handler import execute_query
-from utils import format_records
+from blueprints.customers.customers import customers_blueprint
+from blueprints.astronauts.astronaut import astronauts_blueprint
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates/')
+
+app.register_blueprint(astronauts_blueprint, url_prefix='/astronauts')
+app.register_blueprint(customers_blueprint)
 
 
 @app.route("/<int:counter>/")
@@ -55,29 +58,6 @@ def generate_password(password_length: int):
     return "".join(
         random.choices(string.ascii_lowercase + string.ascii_uppercase + string.digits + string.punctuation,
                        k=password_length))
-
-
-@app.route("/get-astronauts")
-def get_astronauts():
-    url = "http://api.open-notify.org/astros.json"
-    result = requests.get(url, {})
-
-    if result.status_code not in (HTTPStatus.OK,):
-        return Response("ERROR: Something went wrong", status=result.status_code)
-
-    result: dict = result.json()
-    statistics = {}
-    for entry in result.get("people", {}):
-        statistics[entry["craft"]] = statistics.get(entry["craft"], 0) + 1
-
-    return statistics
-
-
-@app.route("/get-customers")
-def get_all_customers():
-    query = "SELECT * FROM customers LIMIT 10"
-    records = execute_query(query=query)
-    return format_records(records)
 
 
 if __name__ == "__main__":
