@@ -4,12 +4,7 @@ import string
 
 
 
-
 import requests
-
-
-
-
 
 from http import HTTPStatus
 
